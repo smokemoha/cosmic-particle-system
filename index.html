@@ -1,30 +1,77 @@
 <!DOCTYPE html>
+<!-- Declares the document type and version of HTML, ensuring proper rendering across browsers -->
+
 <html lang="en">
+<!-- Sets the primary language of the document to English for accessibility and SEO purposes -->
+
 <head>
+    <!-- Contains metadata and document-level instructions for the browser -->
+
     <meta charset="UTF-8">
+    <!-- Specifies the character encoding for the HTML document, ensuring special characters display correctly -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures the webpage is responsive and scales correctly on different devices, such as mobile phones and tablets -->
+
     <title>Cosmic Particle System</title>
+    <!-- Sets the title of the webpage, which appears in the browser tab and is used for bookmarks and SEO -->
+
     <link rel="stylesheet" href="style.css">
+    <!-- Links an external CSS file (style.css) to style the HTML elements, such as layout, colors, and fonts -->
 </head>
+
 <body>
+    <!-- Contains the visible content of the webpage -->
+
     <div id="canvas-container"></div>
+    <!-- A container div where the p5.js canvas will be rendered to display the particle animation.
+         The ID allows JavaScript to target this element specifically for dynamic content -->
+
     <div class="controls">
+        <!-- A container for user interface controls that allow interaction with the particle system -->
+
         <div class="control-group">
+            <!-- Groups related control elements together for better organization and styling -->
+
             <label for="particleCount">Particle Count</label>
+            <!-- A label associated with the "particleCount" input, improving accessibility and user experience by describing the input's purpose -->
+
             <input type="range" id="particleCount" min="50" max="1000" value="200">
+            <!-- A slider input that lets users adjust the number of particles in the animation.
+                 - min: Minimum value (50 particles)
+                 - max: Maximum value (1000 particles)
+                 - value: Default value (200 particles) -->
         </div>
+
         <div class="control-group">
             <label for="particleSize">Particle Size</label>
             <input type="range" id="particleSize" min="1" max="10" value="3">
+            <!-- Another slider for adjusting the size of each particle in the animation.
+                 - min: Smallest size (1 unit)
+                 - max: Largest size (10 units)
+                 - value: Default size (3 units) -->
         </div>
+
         <div class="control-group">
             <label for="noiseScale">Noise Scale</label>
             <input type="range" id="noiseScale" min="0.001" max="0.05" step="0.001" value="0.01">
+            <!-- Slider to control the scale of Perlin noise, which affects the movement pattern of particles.
+                 - min: Smallest noise scale (0.001)
+                 - max: Largest noise scale (0.05)
+                 - step: Increment value for fine-tuned adjustments (0.001)
+                 - value: Default noise scale (0.01) -->
         </div>
+
         <div class="control-group">
             <label for="noiseSpeed">Noise Speed</label>
             <input type="range" id="noiseSpeed" min="0.0001" max="0.01" step="0.0001" value="0.001">
+            <!-- Slider to adjust how fast the noise (and thus particle movement) changes over time.
+                 - min: Slowest speed (0.0001)
+                 - max: Fastest speed (0.01)
+                 - step: Fine increment (0.0001)
+                 - value: Default speed (0.001) -->
         </div>
+
         <div class="control-group">
             <label for="colorMode">Color Mode</label>
             <select id="colorMode">
@@ -32,9 +79,18 @@
                 <option value="monochrome">Monochrome</option>
                 <option value="complementary">Complementary</option>
             </select>
+            <!-- A dropdown menu allowing users to choose the color scheme for the particles.
+                 - Options include "rainbow" (multicolored), "monochrome" (single color), and "complementary" (opposing colors on the color wheel) -->
         </div>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <!-- Loads the p5.js library from a CDN, which is used for creating the interactive particle animation.
+         p5.js simplifies graphics programming and animation in JavaScript -->
+
     <script src="sketch.js"></script>
+    <!-- Links an external JavaScript file (sketch.js) that contains the logic for the particle system,
+         including drawing, updating, and responding to user inputs from the controls -->
 </body>
+
 </html>

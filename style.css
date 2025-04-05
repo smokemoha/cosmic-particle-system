@@ -1,73 +1,157 @@
+/* Reset default styles for all elements to ensure consistency across browsers */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* Ensures that padding and border are included in an element's total width and height, preventing layout shifts */
 }
 
+/* Style the body to create a full-screen, dark-themed environment for the particle animation */
 body {
     font-family: 'Arial', sans-serif;
+    /* Sets the font to Arial (with sans-serif fallback) for a clean, modern look */
+
     background-color: #111;
+    /* Dark background color (#111 is a very dark gray) to contrast with white text and particle effects */
+
     color: #fff;
+    /* Default text color set to white for readability against the dark background */
+
     overflow: hidden;
+    /* Prevents scrolling by hiding any overflow, ensuring the canvas and controls stay within view */
+
     display: flex;
+    /* Uses flexbox for layout, allowing easy positioning of child elements */
+
     flex-direction: column;
+    /* Stacks children vertically (canvas on top, controls at bottom) */
+
     height: 100vh;
+    /* Full viewport height to ensure the body takes up the entire screen */
 }
 
+/* Styles for the container holding the p5.js canvas */
 #canvas-container {
     flex: 1;
+    /* Allows the container to expand to fill available space, pushing controls to the bottom */
+
     width: 100%;
+    /* Ensures the container spans the full width of the viewport */
+
     position: relative;
+    /* Establishes a positioning context for absolutely positioned children (like controls) */
 }
 
+/* Styles for the control panel containing sliders and dropdown */
 .controls {
     position: absolute;
+    /* Positions the controls relative to #canvas-container, layering them over the canvas */
+
     bottom: 20px;
+    /* Places controls 20px from the bottom of the canvas container */
+
     left: 20px;
+    /* Places controls 20px from the left edge of the canvas container */
+
     background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent black background for visibility while maintaining some canvas visibility */
+
     padding: 15px;
+    /* Inner spacing to prevent controls from touching edges of the panel */
+
     border-radius: 10px;
+    /* Rounded corners for a modern, sleek appearance */
+
     display: flex;
+    /* Uses flexbox to layout control groups horizontally with wrapping */
+
     flex-wrap: wrap;
+    /* Allows controls to wrap to new lines if space is limited */
+
     gap: 15px;
+    /* Adds spacing between control groups for better visual separation */
+
     z-index: 100;
+    /* Ensures controls appear above the canvas (higher stacking order) */
+
     backdrop-filter: blur(5px);
+    /* Applies a blur effect to the background behind the controls, enhancing readability */
+
     border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle white border for definition, with low opacity for subtlety */
+
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Adds a subtle shadow below the controls for depth and elevation */
+
     transition: opacity 0.3s ease;
+    /* Smooth transition for opacity changes, used in the hover effect */
 }
 
+/* Hover effect to make controls more visible when interacted with */
 .controls:hover {
     opacity: 1;
+    /* Full opacity on hover for better visibility and user feedback */
 }
 
+/* Styles for individual groups of controls (e.g., label and input pairs) */
 .control-group {
     display: flex;
+    /* Uses flexbox to stack label and input vertically */
+
     flex-direction: column;
+    /* Stacks children (label above input) vertically */
+
     min-width: 120px;
+    /* Ensures each control group has a minimum width for readability and layout consistency */
 }
 
+/* Styles for labels within control groups */
 label {
     margin-bottom: 5px;
+    /* Adds space below the label for separation from the input */
+
     font-size: 12px;
+    /* Small font size for compact labels, fitting the UI design */
+
     color: #ccc;
+    /* Light gray color for labels, providing contrast while remaining subtle */
 }
 
+/* Styles for range input sliders */
 input[type="range"] {
     width: 100%;
+    /* Full width of the control group for maximum usability */
+
     cursor: pointer;
+    /* Changes cursor to indicate interactivity when hovering over the slider */
 }
 
+/* Styles for the color mode dropdown select element */
 select {
     padding: 5px;
+    /* Inner padding for better click area and visual spacing */
+
     background-color: #333;
+    /* Dark gray background to match the theme */
+
     color: #fff;
+    /* White text for readability against dark background */
+
     border: 1px solid #555;
+    /* Subtle dark border for definition */
+
     border-radius: 4px;
+    /* Slight rounding of corners for consistency with other elements */
+
     cursor: pointer;
+    /* Indicates interactivity when hovering */
 }
 
+/* Focus state for the select dropdown to provide visual feedback */
 select:focus {
     outline: none;
+    /* Removes default outline for custom styling */
+
     border-color: #777;
+    /* Changes border color on focus for subtle feedback, darker gray for contrast */
 }
