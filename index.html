@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Particle System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="canvas-container"></div>
+    <div class="controls">
+        <div class="control-group">
+            <label for="particleCount">Particle Count</label>
+            <input type="range" id="particleCount" min="50" max="1000" value="200">
+        </div>
+        <div class="control-group">
+            <label for="particleSize">Particle Size</label>
+            <input type="range" id="particleSize" min="1" max="10" value="3">
+        </div>
+        <div class="control-group">
+            <label for="noiseScale">Noise Scale</label>
+            <input type="range" id="noiseScale" min="0.001" max="0.05" step="0.001" value="0.01">
+        </div>
+        <div class="control-group">
+            <label for="noiseSpeed">Noise Speed</label>
+            <input type="range" id="noiseSpeed" min="0.0001" max="0.01" step="0.0001" value="0.001">
+        </div>
+        <div class="control-group">
+            <label for="colorMode">Color Mode</label>
+            <select id="colorMode">
+                <option value="rainbow">Rainbow</option>
+                <option value="monochrome">Monochrome</option>
+                <option value="complementary">Complementary</option>
+            </select>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script src="sketch.js"></script>
+</body>
+</html>
